@@ -1,0 +1,34 @@
+def escape_room_question():
+    # Get the user's name
+    user_name = input("Before we begin, please enter your name: ")
+
+    # Use the user's name to create the question
+    question = f"{user_name}, you are the child of Tom and Tina. Tom and Tina's kids are Jack, Nathan, and who?"
+
+    # Multiple-choice answers
+    choices = ["Sophie", "Olivia", "Emily", "Grace", user_name]
+
+    # Correct answer based on user input
+    correct_answer = user_name
+
+    # Display the question and choices
+    print(question)
+    for i, choice in enumerate(choices, 1):
+        print(f"{i}. {choice}")
+
+    # Get user input for their answer
+    user_answer = input("Enter the number corresponding to your answer: ")
+
+    # Check if the answer is correct
+    if user_answer.isdigit() and 1 <= int(user_answer) <= len(choices):
+        user_answer_index = int(user_answer) - 1
+        if choices[user_answer_index] == correct_answer:
+            print("Congratulations! You've solved the puzzle.")
+            print(f"As a reward, the secret word is: 'ESCAPE'")
+        else:
+            print("Sorry, that's incorrect. Try again!")
+    else:
+        print("Invalid input. Please enter a number corresponding to your answer.")
+
+# Call the function to run the escape room question
+escape_room_question()
