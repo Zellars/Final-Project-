@@ -25,7 +25,7 @@ def get_user_info():
     while True:
         correct = input()
         if not correct.lower().startswith('y'):
-            print("Please re-enter your information")
+            print("Enter y to restart and please re-enter your information")
         else:
             break
 
